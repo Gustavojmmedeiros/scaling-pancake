@@ -1,6 +1,8 @@
+# Main
 # Primeira branch
 
 from fastapi import FastAPI
+import random
 
 app = FastAPI()
 
@@ -12,5 +14,5 @@ async def root():
 
 # http://127.0.0.1:8000/teste1
 @app.get("/teste1")
-async def funcaoteste():
-    return {"teste": "deu certo"}
+async def teste1():
+    return {"teste": True, "num_aleatorio": random.randint(0, 1000)}
