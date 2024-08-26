@@ -1,7 +1,7 @@
 # Main
 # Primeira branch
 
-from fastapi import FastAPI
+from fastapi import FastAPI # type: ignore
 import random
 
 app = FastAPI()
