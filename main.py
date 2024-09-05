@@ -1,18 +1,36 @@
-# Main
-# Primeira branch
-
-from fastapi import FastAPI # type: ignore
 import random
+from fastapi import FastAPI
+# from pydantic import BaseModel
 
 app = FastAPI()
 
-# http://127.0.0.1:8000
-@app.get("/")
+
+# class Estudante(BaseModel):
+#     name: str
+#     curso: str
+#     ativo:bool
+
+
+@app.get("/helloworld")
 async def root():
-    return {"message": "Hello World"} 
+    return {"message": "Hello World"}
 
 
-# http://127.0.0.1:8000/teste1
-@app.get("/teste1")
-async def teste1():
-    return {"teste": True, "num_aleatorio": random.randint(0, 1000)}
+@app.get("/funcaoteste")
+async def funcaoteste():
+    return {"teste": True, "num_aleatorio": random.randint(0, 2000)}
+
+
+# @app.post("/estudantes/cadastros")
+# async def create_estudante(estudante: Estudante):
+#     return estudante
+
+
+# @app.put("/estudantes/update/{id_studante}")
+# async def update_item(id_estudante: int):
+#     return id_estudante > 0
+
+
+# @app.delete("/estudantes/delete/{id_estudante}")
+# async def delete_estudante(id_estudante: int):
+#     return id_estudante > 0
